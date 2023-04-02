@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/styles/style.css">
+
+
+<div class="album-topdiv">
+    <h1>Album results</h1>
+    {{!-- <h1>{{name}}</h1> --}}
+    {{!-- <h1>Search results: "{{ artist }}"</h1> --}}
+</div>
+
+<div class="albums-div">
+    {{#each albums}}
+    <div class="each-album-div">
+        <div class="div1">
+            <h3>{{this.name}}</h3>
+        </div>
+        <a href='/tracks/{{id}}'>
+            <div class="div2">
+                {{#if images.length}}
+                <img class="album-img" src="{{this.images.[0].url}}">
+                {{/if}}
+            </div>
+        </a>
+        <div class="div3"><a href='/tracks/{{id}}'>View Tracks</a></div>
+    </div>
+    {{/each}}
+
+</div>
